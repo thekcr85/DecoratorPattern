@@ -1,7 +1,5 @@
-using DecoratorPattern.Application.Decorators;
+using DecoratorPattern.Application.Extensions;
 using DecoratorPattern.Application.Interfaces;
-using DecoratorPattern.Application.Services;
-using DecoratorPattern.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,9 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.Decorate<IUserService, LoggingUserServiceDecorator>();
+builder.Services.AddApplicationServices();
+builder.Services.AddInfrastructureServices();
 
 var app = builder.Build();
 
