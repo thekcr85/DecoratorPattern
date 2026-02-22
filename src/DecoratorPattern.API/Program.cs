@@ -1,5 +1,5 @@
+using DecoratorPattern.API.Extensions;
 using DecoratorPattern.Application.Extensions;
-using DecoratorPattern.Application.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +9,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices();
+builder.Services.AddEndpoints();
 
 var app = builder.Build();
 
@@ -20,10 +21,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/users/{id:guid}", async (Guid id, IUserService userService, CancellationToken cancellationToken) =>
-{
-	var user = await userService.GetUserAsync(id);
-	return user is not null ? Results.Ok(user) : Results.NotFound();
-});
+app.MapEndpoints();
 
 app.Run();
