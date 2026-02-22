@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="src/DecoratorPattern.API/DecoratorPattern.API.csproj" />
+  <Project Path="src/DecoratorPattern.Application/DecoratorPattern.Application.csproj" />
+  <Project Path="src/DecoratorPattern.Domain/DecoratorPattern.Domain.csproj" />
+  <Project Path="src/DecoratorPattern.Infrastructure/DecoratorPattern.Infrastructure.csproj" />
+</Solution>
