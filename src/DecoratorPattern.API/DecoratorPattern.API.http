@@ -1,6 +1,4 @@
 @DecoratorPattern.API_HostAddress = http://localhost:5110
 
-GET {{DecoratorPattern.API_HostAddress}}/weatherforecast/
+GET {{DecoratorPattern.API_HostAddress}}/users/11111111-1111-1111-1111-111111111111
 Accept: application/json
-
-###
