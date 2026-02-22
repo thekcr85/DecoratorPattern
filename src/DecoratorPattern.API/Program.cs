@@ -23,5 +23,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.MapGet("/users/{id:guid}", async (Guid id, IUserService userService, CancellationToken cancellationToken) =>
+{
+	var user = await userService.GetUserAsync(id);
+	return user is not null ? Results.Ok(user) : Results.NotFound();
+});
 
 app.Run();
