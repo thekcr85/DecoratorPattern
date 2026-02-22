@@ -11,4 +11,9 @@
     <PackageReference Include="Scrutor" Version="7.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DecoratorPattern.Application\DecoratorPattern.Application.csproj" />
+    <ProjectReference Include="..\DecoratorPattern.Infrastructure\DecoratorPattern.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
